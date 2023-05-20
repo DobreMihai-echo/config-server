@@ -14,14 +14,9 @@ spec:
       containers:
       - name: config-server-app
         image: IMAGE_URL/config-server
+        imagePullPolicy: Always
         ports:
         - containerPort: 9000
-        env:
-          - name: EUREKA_SERVER_ADDRESS
-            valueFrom:
-              configMapKeyRef:
-                key: EUREKA_SERVER_ADDRESS
-                name: eureka-cm
 
 ---
 apiVersion: v1
