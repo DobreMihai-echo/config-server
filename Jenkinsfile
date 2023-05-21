@@ -1,5 +1,5 @@
 node {
-    def repourl = "us-west4-docker.pkg.dev/dissertationmyplanet/my-planet"
+    def repourl = "${REGISTRY_URL}/${PROJECT_ID}/${ARTIFACT_REGISTRY}"
     def mvnHome = tool name: 'maven', type: 'maven'
     def mvnCMD = "${mvnHome}/bin/mvn"
     stage('Checkout') {
